@@ -31,4 +31,16 @@ public class AnimalList {
         }
     }
 
+    public void remove(Animal animalName) {
+        AnimalListItem listItemToAdd = new AnimalListItem(animalName);
+        if (head == listItemToAdd) {
+            head = head.getNext();
+        } else {
+            AnimalListItem currentItem = head;
+            while (currentItem.getNext() != null){
+                currentItem = currentItem.getNext();
+            }
+            currentItem.setNext(listItemToAdd);
+        }
+    }
 }

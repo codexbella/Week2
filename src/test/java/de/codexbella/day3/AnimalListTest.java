@@ -32,4 +32,18 @@ class AnimalListTest {
         testList.add(new Animal("Snake"));
         Assertions.assertEquals("Bird -> Dog -> Cat -> Horse -> Fish -> Snake", testList.toString());
     }
+    @Test
+    void shouldRemoveHorse() {
+        AnimalList testList = new AnimalList();
+        Animal horse = new Animal("Horse");
+        testList.add(new Animal("Bird"));
+        testList.add(new Animal("Dog"));
+        testList.add(new Animal("Cat"));
+        testList.add(horse);
+        testList.add(new Animal("Fish"));
+        testList.add(new Animal("Snake"));
+        testList.add(horse);
+        testList.remove(horse);
+        Assertions.assertEquals("Bird -> Dog -> Cat -> Fish -> Snake", testList.toString());
+    }
 }
