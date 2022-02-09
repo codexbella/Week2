@@ -5,19 +5,30 @@ public class AnimalList {
 
     @Override
     public String toString() {
-        return head.getValue().toString();
-        //return head.toString();
+        if (head == null) {
+            return "";
+        } else {
+            AnimalListItem currentItem = head;
+            String result = currentItem.toString();
+            while (currentItem.getNext() != null){
+                currentItem = currentItem.getNext();
+                result = result + " -> " + currentItem.toString();
+            }
+            return result;
+        }
     }
 
-    public void add(Animal name) {
-        AnimalListItem toAdd = new AnimalListItem(name);
+    public void add(Animal animalName) {
+        AnimalListItem listItemToAdd = new AnimalListItem(animalName);
         if (head == null) {
-            head = toAdd;
-        } else if (head.getNext() == null) {
-            AnimalListItem animal1 = toAdd;
+            head = listItemToAdd;
+        } else {
+            AnimalListItem currentItem = head;
+            while (currentItem.getNext() != null){
+            currentItem = currentItem.getNext();
+            }
+            currentItem.setNext(listItemToAdd);
         }
-        //über next zu dem Item hangeln, wo next == null,
-        // André würde mit while-Schleife arbeiten
     }
 
 }

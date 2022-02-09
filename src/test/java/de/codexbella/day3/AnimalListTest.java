@@ -21,4 +21,15 @@ class AnimalListTest {
         testList.add(new Animal("Cat"));
         Assertions.assertEquals("Bird -> Dog -> Cat", testList.toString());
     }
+    @Test
+    void shouldAddFiveAnimals() {
+        AnimalList testList = new AnimalList();
+        testList.add(new Animal("Bird"));
+        testList.add(new Animal("Dog"));
+        testList.add(new Animal("Cat"));
+        testList.add(new Animal("Horse"));
+        testList.add(new Animal("Fish"));
+        testList.add(new Animal("Snake"));
+        Assertions.assertEquals("Bird -> Dog -> Cat -> Horse -> Fish -> Snake", testList.toString());
+    }
 }
