@@ -1,4 +1,4 @@
-package de.codexbella.day3;
+package de.codexbella.day3.myOwnList;
 
 public class AnimalListItem {
     private Animal value = new Animal("");

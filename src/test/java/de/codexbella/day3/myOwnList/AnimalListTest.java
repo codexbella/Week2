@@ -1,9 +1,9 @@
-package de.codexbella.day3;
+package de.codexbella.day3.myOwnList;
 
+import de.codexbella.day3.myOwnList.Animal;
+import de.codexbella.day3.myOwnList.AnimalList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalListTest {
     @Test

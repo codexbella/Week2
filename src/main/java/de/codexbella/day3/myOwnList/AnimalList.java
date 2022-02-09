@@ -1,4 +1,4 @@
-package de.codexbella.day3;
+package de.codexbella.day3.myOwnList;
 
 public class AnimalList {
     private AnimalListItem head;
@@ -36,11 +36,18 @@ public class AnimalList {
         if (head == listItemToAdd) {
             head = head.getNext();
         } else {
-            AnimalListItem currentItem = head;
-            while (currentItem.getNext() != null){
-                currentItem = currentItem.getNext();
+            AnimalListItem currentItem = head.getNext();
+            AnimalListItem itemBefore = head;
+            AnimalListItem itemAfter;
+            while (currentItem != null) {
+                itemAfter = currentItem.getNext();
+                if (currentItem == listItemToAdd) {
+                    itemBefore.setNext(itemAfter);
+                } else {
+                    itemBefore = currentItem;
+                    currentItem = itemAfter;
+                }
             }
-            currentItem.setNext(listItemToAdd);
         }
     }
 }
