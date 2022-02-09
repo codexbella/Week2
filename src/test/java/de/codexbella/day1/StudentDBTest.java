@@ -51,7 +51,6 @@ class StudentDBTest {
                 new Student("Variante", "Corona", "80907033", 5)};
         StudentDB testStudents = new StudentDB(testArray);
         Student randomStudent = testStudents.randomStudent();
-        System.out.println(randomStudent);
         Assertions.assertNotNull(randomStudent);
     }
     @Test

@@ -1,4 +1,4 @@
-package de.codexbella.day1;
+package de.codexbella.day3.ArrayToArrayList;
 
 import java.util.Objects;
 

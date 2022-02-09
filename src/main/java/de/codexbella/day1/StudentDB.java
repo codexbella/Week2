@@ -27,18 +27,15 @@ public class StudentDB {
 
     public Student randomStudent() {
         Student randomStudent = students[(int) (Math.random() * students.length)];
-        System.out.println("students.length: " + students.length);
-        System.out.println("Math.random() * students.length: " + Math.random() * students.length);
-        System.out.println("(int) (Math.random() * students.length): " + (int) (Math.random() * students.length));
         return randomStudent;
     }
 
-/*    public void add(Student studentToAdd) {
-        Student[] newStudents = new Student[students.length + 1];
-        newStudents = Arrays.copyOf(students, students.length + 1);
-        newStudents[newStudents.length - 1] = studentToAdd;
-        this.students = newStudents;
-    }*/
+    /*    public void add(Student studentToAdd) {
+            Student[] newStudents = new Student[students.length + 1];
+            newStudents = Arrays.copyOf(students, students.length + 1);
+            newStudents[newStudents.length - 1] = studentToAdd;
+            this.students = newStudents;
+        }*/
     public void add(Student studentToAdd) {
         Student[] newStudents = Arrays.copyOf(students, students.length + 1);
         newStudents[newStudents.length - 1] = studentToAdd;
@@ -46,10 +43,10 @@ public class StudentDB {
     }
 
 
-         public void remove(int i) {
-         Student[] newStudents = Arrays.copyOf(students, students.length - 1);
-         System.arraycopy(students, 0, newStudents, 0, i);
-         System.arraycopy(students, i + 1, newStudents, i, students.length - (i + 1));
-         this.students = newStudents;
-     }
+    public void remove(int i) {
+        Student[] newStudents = Arrays.copyOf(students, students.length - 1);
+        System.arraycopy(students, 0, newStudents, 0, i);
+        System.arraycopy(students, i + 1, newStudents, i, students.length - (i + 1));
+        this.students = newStudents;
+    }
 }
