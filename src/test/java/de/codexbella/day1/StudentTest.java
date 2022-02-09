@@ -36,8 +36,8 @@ class StudentTest {
     }
     @Test
     void testCopy() {
-        var student = new Student("Schreck", "André", "50406030", 11);
-        var result = new Student(student);
+        var testStudent = new Student("Schreck", "André", "50406030", 11);
+        var result = new Student(testStudent);
 
         assertEquals("André", result.getFirstName());
         assertEquals("Schreck", result.getLastName());

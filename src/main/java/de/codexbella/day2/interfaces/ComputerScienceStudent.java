@@ -1,8 +1,8 @@
-package de.codexbella.day1;
+package de.codexbella.day2.interfaces;
 
 import java.util.Objects;
 
-public class Student {
+public class ComputerScienceStudent implements Student{
     private String lastName = "";//oder: private String lastName; (ohne Initialisierung, aber dann wird bei Strings kein Wert, also null, gesetzt.)
     private String firstName = "";//oder: priv
     // ate String firstName;
@@ -10,7 +10,7 @@ public class Student {
     private int currentSemester = 1;//oder: private in currentSemester;
 
     //Konstruktor:
-    public Student(String lastName, String firstName, String studentNumber, int currentSemester){
+    public ComputerScienceStudent(String lastName, String firstName, String studentNumber, int currentSemester){
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
@@ -18,7 +18,7 @@ public class Student {
     }
 
     //Häufiger Konstruktor ist einer zum sich selbst Kopieren:
-    public Student(Student toCopy) {
+    public ComputerScienceStudent(ComputerScienceStudent toCopy) {
         this.firstName = toCopy.getFirstName();
         this.lastName = toCopy.getLastName();
         this.studentNumber = toCopy.getStudentNumber();
@@ -51,6 +51,11 @@ public class Student {
     }
 
     @Override
+    public String getMajor() {
+        return "Computer Science";
+    }
+
+    @Override
     public String toString() {
         return getLastName() + ", " + getFirstName() + " - Student number: " + getStudentNumber() + ", current semester: " + getCurrentSemester();
     }
@@ -61,7 +66,7 @@ public class Student {
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-        Student student = (Student) o;
+        ComputerScienceStudent student = (ComputerScienceStudent) o;
         return currentSemester == student.currentSemester && Objects.equals(lastName, student.lastName) && Objects.equals(firstName, student.firstName) && Objects.equals(studentNumber, student.studentNumber);
     }
 
