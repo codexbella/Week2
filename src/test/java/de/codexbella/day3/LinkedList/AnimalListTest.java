@@ -1,7 +1,5 @@
-package de.codexbella.day3.myOwnList;
+package de.codexbella.day3.LinkedList;
 
-import de.codexbella.day3.myOwnList.Animal;
-import de.codexbella.day3.myOwnList.AnimalList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

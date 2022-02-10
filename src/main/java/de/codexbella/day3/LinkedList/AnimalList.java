@@ -1,4 +1,4 @@
-package de.codexbella.day3.myOwnList;
+package de.codexbella.day3.LinkedList;
 
 public class AnimalList {
     private AnimalListItem head;

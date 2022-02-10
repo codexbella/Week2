@@ -55,51 +55,53 @@ class StudentDBTest {
     }
     @Test
     void shouldAddNewStudent() {
-        Student[] initialStudentArray = { new Student("Variante", "Corona", "80907033", 5)};
+        Student maxMogul = new Student("Mogul", "Max", "60907061", 21);
+        Student olafTeutsch = new Student("Teutsch", "Olaf", "80907361", 6);
+        Student[] initialStudentArray = {maxMogul};
         StudentDB students = new StudentDB(initialStudentArray);
-        students.add(new Student("Holimoli", "Ohmeij", "80907011", 3));
-        Assertions.assertArrayEquals(new Student[]{new Student("Variante", "Corona", "80907033", 5),
-                new Student("Holimoli", "Ohmeij", "80907011", 3)}, students.list());
+        students.add(olafTeutsch);
+        Assertions.assertArrayEquals(new Student[]{maxMogul, olafTeutsch}, students.list());
     }
     @Test
     void shouldRemoveFirstStudent() {
-        Student[] initialStudentArray = {new Student("Variante", "Corona", "80907033", 5),
-                new Student("Holimoli", "Ohmeij", "80907011", 3)};
+        Student maxMogul = new Student("Mogul", "Max", "60907061", 21);
+        Student olafTeutsch = new Student("Teutsch", "Olaf", "80907361", 6);
+        Student[] initialStudentArray = {maxMogul, olafTeutsch};
         StudentDB students = new StudentDB(initialStudentArray);
         students.remove(0);
-        Assertions.assertArrayEquals(new Student[]{new Student("Holimoli", "Ohmeij", "80907011", 3)}, students.list());
+        Assertions.assertArrayEquals(new Student[]{olafTeutsch}, students.list());
     }
     @Test
     void shouldRemoveLastStudent() {
-        // given
-        Student[] students = {new Student("Variante", "Corona", "80907033",5),
-                new Student("Holimoli", "Ohmeij", "80907011", 3)};
-        StudentDB studentDB = new StudentDB(students);
+        Student maxMogul = new Student("Mogul", "Max", "60907061", 21);
+        Student olafTeutsch = new Student("Teutsch", "Olaf", "80907361", 6);
+        Student carlSuloba = new Student("Suloba", "Carl", "80907461", 9);
+        Student lalaSingvogel = new Student("Singvogel", "Lala", "80903061", 7);
+        Student ludolfTot = new Student("Tot", "Ludolf", "85907061", 101);
+        Student tristanLeben = new Student("Leben", "Tristan", "50907061", 1);
 
-        // when
-        studentDB.remove(1);
-        Student[] actual = studentDB.list();
+        Student[] students = {maxMogul, olafTeutsch, carlSuloba, lalaSingvogel, ludolfTot, tristanLeben};
+        StudentDB studentTestDB = new StudentDB(students);
 
-        // then
-        Student[] expected = {new Student("Variante", "Corona", "80907033", 5)};
-        Assertions.assertArrayEquals(expected, actual);
+        studentTestDB.remove(5);
+        Student[] expected = {maxMogul, olafTeutsch, carlSuloba, lalaSingvogel, ludolfTot};
+        Assertions.assertArrayEquals(expected, studentTestDB.list());
     }
 
     @Test
     void shouldRemoveIntermediateStudent() {
-        // given
-        Student[] students = {new Student("Variante", "Corona", "80907033",5),
-                new Student("Wunderbar", "Maria", "80957061", 7),
-                new Student("Holimoli", "Ohmeij", "80907011", 3)};
-        StudentDB studentDB = new StudentDB(students);
+        Student maxMogul = new Student("Mogul", "Max", "60907061", 21);
+        Student olafTeutsch = new Student("Teutsch", "Olaf", "80907361", 6);
+        Student carlSuloba = new Student("Suloba", "Carl", "80907461", 9);
+        Student lalaSingvogel = new Student("Singvogel", "Lala", "80903061", 7);
+        Student ludolfTot = new Student("Tot", "Ludolf", "85907061", 101);
+        Student tristanLeben = new Student("Leben", "Tristan", "50907061", 1);
 
-        // when
-        studentDB.remove(1);
-        Student[] actual = studentDB.list();
+        Student[] students = {maxMogul, olafTeutsch, carlSuloba, lalaSingvogel, ludolfTot, tristanLeben};
+        StudentDB studentTestDB = new StudentDB(students);
 
-        // then
-        Student[] expected = {new Student("Variante", "Corona", "80907033", 5),
-                new Student("Holimoli", "Ohmeij", "80907011", 3)};
-        Assertions.assertArrayEquals(expected, actual);
+        studentTestDB.remove(2);
+        Student[] expected = {maxMogul, olafTeutsch, lalaSingvogel, ludolfTot, tristanLeben};
+        Assertions.assertArrayEquals(expected, studentTestDB.list());
     }
 }

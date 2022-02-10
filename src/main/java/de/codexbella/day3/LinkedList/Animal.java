@@ -1,4 +1,4 @@
-package de.codexbella.day3.myOwnList;
+package de.codexbella.day3.LinkedList;
 
 public class Animal {
     private String name = "";
