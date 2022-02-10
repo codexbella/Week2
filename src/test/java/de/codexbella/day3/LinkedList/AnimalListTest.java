@@ -20,7 +20,7 @@ class AnimalListTest {
         Assertions.assertEquals("Bird -> Dog -> Cat", testList.toString());
     }
     @Test
-    void shouldAddFiveAnimals() {
+    void shouldAddSixAnimals() {
         AnimalList testList = new AnimalList();
         testList.add(new Animal("Bird"));
         testList.add(new Animal("Dog"));
@@ -32,6 +32,7 @@ class AnimalListTest {
     }
     @Test
     void shouldRemoveHorse() {
+        //TODO Test grün kriegen
         AnimalList testList = new AnimalList();
         Animal horse = new Animal("Horse");
         testList.add(new Animal("Bird"));

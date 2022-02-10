@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentDB {
+    //TODO Komplette "Aufgabe: ArrayList" nochmal nach eigener Implementation der add-Methode
+    //TODO Aufgabe: Map fehlt komplett
     private ArrayList<Student> students;
 
     public StudentDB(ArrayList<Student> students) {

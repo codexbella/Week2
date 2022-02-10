@@ -39,7 +39,7 @@ public class StudentDB {
 
 
     public void remove(int i) {
-        //TODO Nochmal selbst coden - siehe Video und Link zu Pull request (hoffe, der geht noch)
+        //TODO Nochmal selbst coden - siehe Video und Link (Schreibtisch -> Ordner)
         Student[] newStudents = Arrays.copyOf(students, students.length - 1);
         System.arraycopy(students, 0, newStudents, 0, i);
         System.arraycopy(students, i + 1, newStudents, i, students.length - (i + 1));

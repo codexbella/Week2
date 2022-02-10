@@ -4,6 +4,7 @@ public class AnimalListItem {
     private Animal value = new Animal("");
     private AnimalListItem next;
 
+    //Konstruktor:
     public Animal getValue() {
         return value;
     }
