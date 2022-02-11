@@ -32,17 +32,21 @@ public class AnimalList {
     }
 
     public void remove(Animal animalName) {
-        AnimalListItem listItemToAdd = new AnimalListItem(animalName);
-        if (head == listItemToAdd) {
-            head = head.getNext();
+        if (head.getValue() == animalName) {
+            if (head.getNext() != null) {
+                head = head.getNext();
+            } else {
+                head = null;
+            }
         } else {
             AnimalListItem currentItem = head.getNext();
             AnimalListItem itemBefore = head;
             AnimalListItem itemAfter;
             while (currentItem != null) {
                 itemAfter = currentItem.getNext();
-                if (currentItem == listItemToAdd) {
+                if (currentItem.getValue() == animalName) {
                     itemBefore.setNext(itemAfter);
+                    currentItem = itemAfter;
                 } else {
                     itemBefore = currentItem;
                     currentItem = itemAfter;
